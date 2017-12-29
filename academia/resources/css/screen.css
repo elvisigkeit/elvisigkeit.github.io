@@ -1,0 +1,148 @@
+body {
+    background: #7B6EB8; /*Para Browsers que não suportam gradient*/
+    background: url("../gfx/stars.png"), 
+    			linear-gradient(#091E25, #2E3855 50%, #7B6EB8);
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+}
+
+#title {
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+
+.circulo{
+	height: 600px;
+	width: 600px;
+	position: relative;
+	margin: 0 auto;
+	background-image: url("../gfx/circle.png");
+	animation: rotacao 2s linear 0s infinite;
+}
+
+.form {
+	color: #FFFFFF;
+}
+
+.form input {
+	text-align: center;
+	border: none;
+	border-bottom: 2px dashed #FFFFFF;
+	width: 300px;
+	padding: 10px 10px 0px 10px;
+	margin: 0 auto;
+	background: rgba(99, 69, 71, 1);
+	display: block;
+	caret-color: #FFFFFF; /*Cor do cursorzinho de escrita*/
+}
+
+.form input:focus{
+	border: 2px solid #FFFFFF;
+	border-radius: 5px;
+	background-color: #D38F83;
+}
+
+.data{
+	color: #FFFFFF;
+}
+
+.data input{
+	color: #FFFFFF;
+	text-align: center;
+	border: none;
+	width: 120px;
+	padding: 0px 0px 0px 20px;
+	margin: 15px 10px 0px 20px;
+	background: rgba(99, 69, 71, 1);
+}
+
+.data input:focus{
+	border: 2px solid #FFFFFF;
+	border-radius: 5px;
+	background-color: #D38F83;
+}
+
+.botao{
+	display: inline-block;
+	margin: 40px 0px 0px 0px;
+	box-sizing: border-box;
+	border-radius: 20px;
+	text-decoration:none;
+	background: rgba(99, 69, 71, 1);
+	width: 400px;
+	height: 50px;
+	font-size: 200%;
+	color: #000000;
+	border: 1px solid rgba(0,0,0,0.6);
+	box-shadow: inset 0px 0px 15px rgba(0,0,0,0.6);
+	text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+	transition: all 0.15s;
+}
+
+.botao:hover{
+	color: #FFFFFF;
+	background: #D38F83;
+	border-color: #FFFFFF;
+	box-shadow: 0px 0px 15px rgba(255,255,255,0.5), inset 0px 0px 15px rgba(255,255,255,0.3);
+	text-shadow: 0 0.04em 0.04em rgba(255,255,255,0.1);
+}
+
+.botaoHome{
+	display: inline-block;
+	margin: 5px;
+	box-sizing: border-box;
+	border-radius: 20px;
+	text-decoration:none;
+	padding-top: 20px;
+	width: 430px;
+	height: 100px;
+	font-size: 250%;
+	color: #000000;
+	border: 1px solid rgba(0,0,0,0.6);
+	box-shadow: inset 0px 0px 15px rgba(0,0,0,0.6);
+	text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+	transition: all 0.15s;
+}
+
+.botaoHome:hover{
+	color: #FFFFFF;
+	background: #D38F83;
+	border-color: #FFFFFF;
+	box-shadow: 0px 0px 15px rgba(255,255,255,0.5), inset 0px 0px 15px rgba(255,255,255,0.3);
+	text-shadow: 0 0.04em 0.04em rgba(255,255,255,0.1);
+}
+
+.livro {
+	height: 500px;
+	width: 450px;
+	position: relative;
+	background: rgba(99, 69, 71, 1);
+	border-radius: 20px;
+	border: 2px solid saddlebrown;
+	margin: 0 auto;
+	top: 48px;
+	text-align: center;
+	box-shadow: inset 0px 0px 15px sienna;
+	animation: stopped 2s linear 0s infinite;
+}
+
+@keyframes stopped{
+	from{transform: rotate(360deg)}
+	to{}
+}
+
+@keyframes rotacao {
+	from {}
+	to {transform: rotate(360deg)}
+}
+
+
+
+@media only screen and (max-device-width: 600px) {
+    /*Codigo relacionado a telas pequenas*/
+}
+
+@media only screen and (min-width: 800px) {
+	/*Codigo relacionado a desktops*/
+	html { overflow: hidden; }
+}
