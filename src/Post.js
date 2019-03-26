@@ -1,7 +1,6 @@
 import React from 'react';
-import Markdown from './Markdown';
 
-function PostsOS(props) {
+function Post(props) {
 
     return (
         <Markdown>

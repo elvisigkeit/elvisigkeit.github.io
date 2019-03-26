@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Blog from './Blog';
+import Portal from './Portal';
 
 class App extends Component {
   render() {
     return (
-      <Blog />
+      <Portal />
     );
   }
 }
