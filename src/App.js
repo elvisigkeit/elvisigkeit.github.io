@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 import Portal from './Portal';
+import NotFound from './NotFound';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-      <Portal />
+      <BrowserRouter>
+          <Switch>
+              <Route path="/" exact={true} component={Portal} />
+              <Route path="*" component={NotFound} />
+          </Switch>
+      </ BrowserRouter>
     );
   }
 }
