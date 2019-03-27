@@ -144,10 +144,10 @@ function Portal(props) {
       </main>
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          Elvis Nobrega
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
+          An enthusiast of Operating Systems and Web development
         </Typography>
       </footer>
       </MuiThemeProvider>
