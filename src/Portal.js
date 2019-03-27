@@ -13,6 +13,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { lime, yellow } from '@material-ui/core/colors';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Divider from '@material-ui/core/Divider';
 import necro from './images/necronomicon.png';
 import realm from './images/realm.png';
 
@@ -53,16 +54,16 @@ const styles = theme => ({
   },
   card: {
     height: '100%',
-    width: '20vw',
+    maxWidth: '20vw',
     [theme.breakpoints.down(1100 + theme.spacing.unit * 3 * 2)]: {
-      width: '40vw',
+      maxWidth: '40vw',
     },
     display: 'flex',
     flexDirection: 'column',
     textDecoration: 'none',
   },
   cardMedia: {
-    paddingTop: '56.25%', // 16:9
+    height: '70%',
   },
   cardContent: {
     flexGrow: 1,
@@ -74,8 +75,8 @@ const styles = theme => ({
 });
 
 const cards = [ 
-  {index: 1, path: "/realm", img: realm},
-  {index: 2, path: "/academia", img: necro},
+  {index: 1, path: "/realm", img: realm, title: "Realm", desc: "Path of my OS development"},
+  {index: 2, path: "/academia", img: necro, title: "Academia", desc: "Alguns estudos em CSS"},
 ];
 
 function Portal(props) {
@@ -123,15 +124,16 @@ function Portal(props) {
                   <CardMedia
                     className={classes.cardMedia}
                     component="img"
-                    image={card.image}
+                    image={card.img}
                     title={card.index}
                   />
+                  <Divider variant="middle" />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      {card.title}
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe the content.
+                      {card.desc}
                     </Typography>
                   </CardContent>
                 </Card>
