@@ -20,7 +20,7 @@ const styles = theme => ({
       height: '30vh',
       background: theme.palette.background.paper,
   },
-  layout: {
+  halfscreen: {
     width: '100vw',
     height: '40vh',
     paddingLeft: '30vw',
@@ -43,7 +43,7 @@ function NotFound(props) {
       <CssBaseline />
       <header className={classes.whitespace}/>
       <main>
-        <div className={classNames(classes.layout)}>
+        <div className={classNames(classes.halfscreen)}>
         
         <Grid container direction="row" justify="center">
           <Grid item className={classes.text}  xs={6}>
