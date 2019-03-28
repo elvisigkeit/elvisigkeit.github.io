@@ -16,9 +16,6 @@ import { Link } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
 import necro from './images/necronomicon.png';
 import realm from './images/realm.png';
-import Academia from './academia/Academia';
-import Realm from './realm/Realm';
-import NotFound from './NotFound';
 
 const ytheme = createMuiTheme({
   palette: {
@@ -121,7 +118,7 @@ function Portal(props) {
               </Typography>
             </Grid>
             {cards.map(card => (
-              <Grid item key={card.index} sm={6} md={6} lg={4} xs={4}>
+              <Grid item key={card.index} sm={6} md={4} lg={4} xs={4}>
                 <Card className={classes.card} component={Link} to={card.path}>
                   <CardMedia
                     className={classes.cardMedia}
@@ -149,7 +146,7 @@ function Portal(props) {
           Elvis Nobrega
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          An enthusiast of Operating Systems and Web development
+          An enthusiast of Operating Systems, Web and Statistics
         </Typography>
       </footer>
       </MuiThemeProvider>

@@ -1,22 +1,29 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import titulo from './gfx/title.png';
+import LayoutAcademia from './LayoutAcademia';
 
-const styles = theme => ({
-
-});
-
-function SigninAcademia(props) {
-    const { classes } = props;
+function SigninAcademia() {
     return (
         <React.Fragment>
-
+            <LayoutAcademia>
+                <img id="title" src={titulo} alt="Titulo academia"/>
+                <form action="?" method="get">
+                    <div class="form">
+                        <input type="email" name="email"/>
+                        Email
+                    </div>
+                    <div class="form">
+                        <input type="password" name="senha"/>
+                        Senha
+                    </div>
+                    <div class="data">
+                        Nascimento<input type="date" name="senha"/>
+                    </div>
+                    <input type="submit" class="botao" value="Confirmar"/>
+                </form>
+            </LayoutAcademia>
         </React.Fragment>
     );
 }
-
-SigninAcademia.propTypes = {
-    classes: PropTypes.object.isRequired,
-  };
   
-  export default withStyles(styles)(SigninAcademia);
+export default SigninAcademia;

@@ -1,18 +1,16 @@
 import React from 'react';
 import titulo from './gfx/title.png';
-import "./screen.css";
+import { Link } from 'react-router-dom';
+import LayoutAcademia from './LayoutAcademia';
 
-function Academia() {
+const Academia = () => {
     return (
         <React.Fragment>
-            <div className="academia">
-                <div className="circulo"/>
-                <div className="livro">
-                    <img id="title" src={titulo} alt="Titulo academia"/>
-                    <a className="botaoHome" >Entrar</a>
-                    <a className="botaoHome" href="academia/signin">Criar Conta</a>
-                </div>
-            </div>
+            <LayoutAcademia>
+                <img id="title" src={titulo} alt="Titulo academia"/>
+                <a className="botaoHome" >Entrar</a>
+                <Link className="botaoHome" to="/academia/signin">Criar Conta</Link>
+            </LayoutAcademia>
         </React.Fragment>
     );
 }
