@@ -12,10 +12,13 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { lime, yellow } from '@material-ui/core/colors';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
 import necro from './images/necronomicon.png';
 import realm from './images/realm.png';
+import Academia from './academia/Academia';
+import Realm from './realm/Realm';
+import NotFound from './NotFound';
 
 const ytheme = createMuiTheme({
   palette: {
@@ -34,7 +37,7 @@ const styles = theme => ({
   heroContent: {
     maxWidth: 600,
     margin: '0 auto',
-    padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`,
+    padding: `${theme.spacing.unit * 6}px 0 ${theme.spacing.unit * 4}px`,
   },
   heroButtons: {
     marginTop: theme.spacing.unit * 4,
@@ -84,7 +87,6 @@ function Portal(props) {
 
   return (
     <React.Fragment>
-      <Router>
       <CssBaseline />
       <MuiThemeProvider theme={ytheme}>
       <main>
@@ -112,7 +114,7 @@ function Portal(props) {
           </div>
         </div>
         <div className={classNames(classes.layout, classes.cardGrid)}>
-          <Grid container spacing={40}>
+          <Grid container>
             <Grid item sm={12} md={12} lg={12} xs={12}>
               <Typography variant="h5" align="left" color="textPrimary" paragraph>
                 Projects
@@ -151,7 +153,6 @@ function Portal(props) {
         </Typography>
       </footer>
       </MuiThemeProvider>
-      </Router>
     </React.Fragment>
   );
 }
