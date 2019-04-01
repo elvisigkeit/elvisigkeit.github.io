@@ -14,7 +14,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
-import PostsOS from './PostsOS.js';
 
 const styles = theme => ({
   layout: {

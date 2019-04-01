@@ -4,14 +4,14 @@ import "./screen.css";
 
 function LayoutAcademia({children}) {
     return (
-        <div>
+        <React.Fragment>
             <div className="academia">
             <div className="circulo"/>
             <div className="livro">
             {children.map(child => {return child})}
             </div>
             </div>
-        </div>
+        </React.Fragment>
     );
 }
 

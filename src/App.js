@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Portal from './Portal';
 import NotFound from './NotFound';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
