@@ -9,7 +9,7 @@ import Realm from './realm/Realm';
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter >
           <Switch>
               <Route path="/" exact component={Portal} />
               <Route path="/academia" exact component={Academia}/>

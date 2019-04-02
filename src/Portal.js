@@ -14,6 +14,8 @@ import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { lime, yellow } from '@material-ui/core/colors';
 import { Link } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
+import Footer from './Footer';
+import Zoom from '@material-ui/core/Zoom';
 import necro from './images/necronomicon.png';
 import realm from './images/realm.png';
 
@@ -68,10 +70,6 @@ const styles = theme => ({
   cardContent: {
     flexGrow: 1,
   },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing.unit * 6,
-  },
 });
 
 const cards = [ 
@@ -118,37 +116,32 @@ function Portal(props) {
               </Typography>
             </Grid>
             {cards.map(card => (
-              <Grid item key={card.index} sm={6} md={4} lg={4} xs={4}>
-                <Card className={classes.card} component={Link} to={card.path}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    component="img"
-                    image={card.img}
-                    title={card.index}
-                  />
-                  <Divider variant="middle" />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {card.title}
-                    </Typography>
-                    <Typography>
-                      {card.desc}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
+              <Zoom in={1}>
+                <Grid item key={card.index} sm={6} md={4} lg={4} xs={4}>
+                  <Card className={classes.card} component={Link} to={card.path}>
+                    <CardMedia
+                      className={classes.cardMedia}
+                      component="img"
+                      image={card.img}
+                      title={card.index}
+                    />
+                    <Divider variant="middle" />
+                    <CardContent className={classes.cardContent}>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {card.title}
+                      </Typography>
+                      <Typography>
+                        {card.desc}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Zoom>
             ))}
           </Grid>
         </div>
       </main>
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Elvis Nobrega
-        </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          An enthusiast of Operating Systems, Web and Statistics
-        </Typography>
-      </footer>
+      <Footer/>
       </MuiThemeProvider>
     </React.Fragment>
   );
