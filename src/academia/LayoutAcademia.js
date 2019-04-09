@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "./screen.css";
+require("./screen.css");
 
 function LayoutAcademia({children}) {
     return (

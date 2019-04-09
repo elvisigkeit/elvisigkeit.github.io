@@ -129,14 +129,3 @@
 	from {}
 	to {transform: rotate(360deg)}
 }
-
-
-
-@media only screen and (max-device-width: 600px) {
-    /*Codigo relacionado a telas pequenas*/
-}
-
-@media only screen and (min-width: 800px) {
-	/*Codigo relacionado a desktops*/
-	html { overflow: hidden; }
-}
