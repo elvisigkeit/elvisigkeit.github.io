@@ -63,6 +63,7 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
     textDecoration: 'none',
+    margin: '10px',
   },
   cardMedia: {
     height: '70%',
