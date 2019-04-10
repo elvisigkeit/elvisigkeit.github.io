@@ -19,14 +19,6 @@ import posts from './Posts';
 
 import "../index.css"
 
-const ytheme = createMuiTheme({
-    palette: {
-      primary: yellow,
-      secondary: lime,
-      type: 'dark',
-    },
-});
-
 const styles = theme => ({
     layout: {
       width: 'auto',
@@ -61,7 +53,7 @@ const styles = theme => ({
     }
 });
 
-function Realm(props) {
+function Post(props) {
     const { classes } = props;
     return (
         <React.Fragment>
@@ -76,7 +68,7 @@ function Realm(props) {
             </Typography>
           </Grid>
           <Grid item md={3}>
-            <Typography variant="h6" style={{textAlign: 'justify'}} paragraph>
+            <Typography variant="h6" color="inherit" style={{textAlign: 'justify'}} paragraph>
               The main objective of this project is to discover and show ways to play with 
               the harsh and complex challenge of coding from almost nothing
             </Typography>
@@ -87,7 +79,7 @@ function Realm(props) {
 
         <div className={classes.layout}>
           <Paper>
-            <Typography component="h4" variant="h4" align="left" className={classes.history}>
+            <Typography component="h4" variant="h4" color="inherit" align="left" className={classes.history}>
               History
             </Typography>
               
@@ -119,8 +111,8 @@ function Realm(props) {
     );
 }
 
-Realm.propTypes = {
+Post.propTypes = {
     classes: PropTypes.object.isRequired,
   };
   
-  export default withStyles(styles)(Realm);
+  export default withStyles(styles)(Post);

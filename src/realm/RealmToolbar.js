@@ -43,11 +43,11 @@ function RealmToolbar(props) {
         <div className={classes.layout}>
           <div width="100%">
             <Toolbar className={classes.toolbarMain}>
-                <Typography component="h2" variant="h2" color="inherit" align="left" noWrap className={classes.toolbarTitle}>
+                <Typography component="h2" variant="h2" align="left" noWrap className={classes.toolbarTitle}>
                   Realm OS
                 </Typography>
                 <IconButton align="right" component={Link} to="/">
-                  <HomeIcon style={{ fontSize: 40, color: "#555" }} />
+                  <HomeIcon style={{ fontSize: 40, color: "#AAA" }} />
                 </IconButton>
             </Toolbar>
           </div>

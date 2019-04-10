@@ -23,6 +23,7 @@ const ytheme = createMuiTheme({
   palette: {
     primary: yellow,
     secondary: lime,
+    type: 'dark',
   },
 });
 
@@ -31,7 +32,7 @@ const styles = theme => ({
     marginRight: theme.spacing.unit * 2,
   },
   heroUnit: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: '#424242',
   },
   heroContent: {
     maxWidth: 600,
