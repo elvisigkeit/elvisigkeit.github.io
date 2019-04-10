@@ -63,6 +63,7 @@ const styles = theme => ({
 
 function Realm(props) {
     const { classes } = props;
+    
     return (
         <React.Fragment>
         <CssBaseline />
@@ -93,7 +94,7 @@ function Realm(props) {
               
             <List className={classes.postList}>
               {posts.map(post => (
-                <Link to={post.path} style={{textDecoration: 'none'}}>
+                <Link to={`/realm/post/${post.index}`} style={{textDecoration: 'none'}}>
                   <ListItem alignItems="flex-start">
                     <ListItemAvatar>
                       <img className={classes.postPic} alt={`PostIcon${post.index}`} src={post.image}/>

@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import RealmToolbar from './RealmToolbar';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { lime, yellow } from '@material-ui/core/colors';
-import { Link } from 'react-router-dom';
-import Divider from '@material-ui/core/Divider';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Footer from '../Footer';
 import posts from './Posts';
 
 import "../index.css"
+
+const ytheme = createMuiTheme({
+    palette: {
+      primary: yellow,
+      secondary: lime,
+      type: 'dark',
+    },
+});
 
 const styles = theme => ({
     layout: {
@@ -25,6 +25,7 @@ const styles = theme => ({
       marginBottom: '4%',
       marginLeft: theme.spacing.unit * 3,
       marginRight: theme.spacing.unit * 3,
+      minHeight: '450px',
       [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
         width: 1100,
         marginLeft: 'auto',
@@ -55,55 +56,17 @@ const styles = theme => ({
 
 function Post(props) {
     const { classes } = props;
+    const { match: { params } } = props;
+    var post = posts[params.postid]
+    console.log(post)
+    
     return (
         <React.Fragment>
         <CssBaseline />
         <MuiThemeProvider theme={ytheme}>
         <RealmToolbar/>
-        <Grid container className={classes.mainTitle}>
-          <Grid item md={3}/>
-          <Grid item md={3}>
-            <Typography component="h3" variant="h3" gutterBottom>
-              Path of my OS development
-            </Typography>
-          </Grid>
-          <Grid item md={3}>
-            <Typography variant="h6" color="inherit" style={{textAlign: 'justify'}} paragraph>
-              The main objective of this project is to discover and show ways to play with 
-              the harsh and complex challenge of coding from almost nothing
-            </Typography>
-            <Divider variant="middle" />
-          </Grid>
-          <Grid item md={3}/>
-        </Grid>
-
         <div className={classes.layout}>
-          <Paper>
-            <Typography component="h4" variant="h4" color="inherit" align="left" className={classes.history}>
-              History
-            </Typography>
-              
-            <List className={classes.postList}>
-              {posts.map(post => (
-                <Link to={post.path} style={{textDecoration: 'none'}}>
-                  <ListItem alignItems="flex-start">
-                    <ListItemAvatar>
-                      <img className={classes.postPic} alt={`PostIcon${post.index}`} src={post.image}/>
-                    </ListItemAvatar>
-                    <ListItemText style={{marginBottom: '1%', marginTop: '1%'}}
-                      primary={post.title}
-                      secondary={
-                        <React.Fragment>
-                          {post.summary}
-                        </React.Fragment>
-                      }
-                    />
-                  </ListItem>
-                  <Divider style={{marginBottom: '5%'}}/>
-                </Link>
-              ))}
-            </List>
-          </Paper>
+            {post.content()}
         </div>
         <Footer/>
         </MuiThemeProvider>
