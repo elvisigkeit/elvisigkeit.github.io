@@ -16,7 +16,9 @@ import { Link } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
 import Footer from './Footer';
 import Zoom from '@material-ui/core/Zoom';
+import chess from './images/chess.png';
 import necro from './images/necronomicon.png';
+import poke from './images/pokemon.png';
 import realm from './images/realm.png';
 
 const ytheme = createMuiTheme({
@@ -56,7 +58,7 @@ const styles = theme => ({
     padding: `${theme.spacing.unit * 8}px 0`,
   },
   card: {
-    height: '100%',
+    height: '98%',
     maxWidth: '20vw',
     [theme.breakpoints.down(1100 + theme.spacing.unit * 3 * 2)]: {
       maxWidth: '40vw',
@@ -72,11 +74,16 @@ const styles = theme => ({
   cardContent: {
     flexGrow: 1,
   },
+  cleanDecoration: {
+    textDecoration: 'none',
+  }
 });
 
 const cards = [ 
-  {index: 1, path: "/realm", img: realm, title: "Realm", desc: "Path of my OS development"},
-  {index: 2, path: "/academia", img: necro, title: "Academia", desc: "Alguns estudos em CSS"},
+  {index: 1, path: "https://github.com/elvismdnin/match_gateway", img: chess, title: "CCHESS (2021)", desc: "Little chess development"},
+  {index: 2, path: "https://github.com/elvismdnin/main_color", img: poke, title: "Pokemon Color Picker (2020)", desc: "Estudos em Flutter"},
+  {index: 3, path: "/realm", img: realm, title: "Realm (2018)", desc: "Path of my OS development"},
+  {index: 4, path: "/academia", img: necro, title: "Academia (2016)", desc: "Alguns estudos em CSS"},
 ];
 
 function Portal(props) {
@@ -120,7 +127,7 @@ function Portal(props) {
             {cards.map(card => (
               <Zoom in={1}>
                 <Grid item key={card.index} sm={6} md={4} lg={4} xs={4}>
-                  <Card className={classes.card} component={Link} to={card.path}>
+                  <ProjectCard card={card} classes={classes}>
                     <CardMedia
                       className={classes.cardMedia}
                       component="img"
@@ -136,7 +143,7 @@ function Portal(props) {
                         {card.desc}
                       </Typography>
                     </CardContent>
-                  </Card>
+                  </ProjectCard>
                 </Grid>
               </Zoom>
             ))}
@@ -147,6 +154,26 @@ function Portal(props) {
       </MuiThemeProvider>
     </React.Fragment>
   );
+}
+
+function ProjectCard(props) {
+  let card = props.card
+  let classes = props.classes
+  if(card.path.startsWith("http")) {
+    return ( 
+      <a href={props.card.path} className={props.classes.cleanDecoration}>
+        <Card className={classes.card}  to={card.path}>
+          {props.children}
+        </Card>
+      </a>
+    );
+  } else {
+    return (
+      <Card className={classes.card} component={Link} to={card.path}>
+        {props.children}
+      </Card>
+    );
+  }
 }
 
 Portal.propTypes = {
