@@ -18,6 +18,7 @@ import Footer from './Footer';
 import Zoom from '@material-ui/core/Zoom';
 import chess from './images/chess.png';
 import necro from './images/necronomicon.png';
+import portal from './images/portal.png';
 import poke from './images/pokemon.png';
 import realm from './images/realm.png';
 
@@ -81,9 +82,10 @@ const styles = theme => ({
 
 const cards = [ 
   {index: 1, path: "https://github.com/elvismdnin/match_gateway", img: chess, title: "CCHESS (2021)", desc: "Little chess development"},
-  {index: 2, path: "https://github.com/elvismdnin/main_color", img: poke, title: "Pokemon Color Picker (2020)", desc: "Estudos em Flutter"},
-  {index: 3, path: "/realm", img: realm, title: "Realm (2018)", desc: "Path of my OS development"},
-  {index: 4, path: "/academia", img: necro, title: "Academia (2016)", desc: "Alguns estudos em CSS"},
+  {index: 2, path: "https://github.com/elvismdnin/main_color", img: poke, title: "Pokemon Color Picker (2020)", desc: "Some Flutter research"},
+  {index: 3, path: "https://github.com/elvismdnin/elvismdnin.github.io", img: portal, title: "This page (2018)", desc: "Some React research"},
+  {index: 4, path: "/realm", img: realm, title: "Realm (2018)", desc: "Path of my OS development"},
+  {index: 5, path: "/academia", img: necro, title: "Academia (2016)", desc: "Some CSS research"},
 ];
 
 function Portal(props) {
